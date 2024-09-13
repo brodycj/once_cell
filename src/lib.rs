@@ -364,8 +364,9 @@
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
-// NOTE: This is a temporary workaround for Rust compiler issue:
+// NOTE: This is a temporary workaround for Rust compiler issue(s) ref:
 // - https://github.com/rust-lang/rust/issues/129031
+// - https://github.com/rust-lang/rust/issues/129352
 #![allow(unreachable_patterns)]
 
 #[cfg(feature = "alloc")]
