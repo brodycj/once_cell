@@ -43,6 +43,7 @@ fn main() -> xshell::Result<()> {
     {
         let _s = section("TEST_BETA");
         let _e = push_toolchain(&sh, "beta")?;
+        let _e = sh.push_env("RUSTFLAGS", "-A unreachable_patterns");
         cmd!(sh, "cargo test --features unstable").run()?;
     }
 
