@@ -76,8 +76,7 @@ fn main() -> xshell::Result<()> {
 
         cmd!(sh, "rustup component add miri").run()?;
         cmd!(sh, "cargo miri setup").run()?;
-        cmd!(sh, "RUSTFLAGS=\"-A unreachable_patterns\" cargo miri test --features unstable")
-            .run()?;
+        cmd!(sh, "cargo miri test --features unstable").run()?;
     }
 
     {
