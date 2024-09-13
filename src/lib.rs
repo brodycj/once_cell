@@ -590,7 +590,7 @@ pub mod unsync {
             enum Void {}
             match self.get_or_try_init(|| Ok::<T, Void>(f())) {
                 Ok(val) => val,
-                Err(_) => unreachable!(),
+                Err(void) => match void {},
             }
         }
 
@@ -1119,7 +1119,7 @@ pub mod sync {
             enum Void {}
             match self.get_or_try_init(|| Ok::<T, Void>(f())) {
                 Ok(val) => val,
-                Err(_) => unreachable!(),
+                Err(void) => match void {},
             }
         }
 
